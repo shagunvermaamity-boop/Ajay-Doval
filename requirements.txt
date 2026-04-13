@@ -2,3 +2,5 @@ anthropic
 google-generativeai
 openai-whisper
 streamlit
+yt-dlp
+ffmpeg-python
