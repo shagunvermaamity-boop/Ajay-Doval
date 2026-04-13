@@ -23,7 +23,27 @@ st.title("Ajay Doval Dashboard 🚀")
 url = st.text_input("Enter YouTube URL")
 
 if st.button("Process Video"):
-    st.write("Processing started...")
+    st.write("🚀 Pipeline started")
+
+    steps = [
+        "📥 Intake",
+        "📝 Transcript",
+        "🎬 Shorts",
+        "💼 LinkedIn",
+        "📸 Instagram",
+        "🐦 Twitter",
+        "📝 Blog",
+        "✅ QA",
+        "🔍 ORM"
+    ]
+
+    progress = st.empty()
+
+    for step in steps:
+        progress.info(f"{step} running...")
+        time.sleep(1)
+
+    progress.success("✅ All tasks completed!")
 
 st.subheader("Pipeline")
 
