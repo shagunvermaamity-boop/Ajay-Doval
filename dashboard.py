@@ -1812,7 +1812,7 @@ Then output ===ACTIONS=== and write orm_action_items.md with immediate, short-te
 
 if __name__ == "__main__":
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
-    server = http.server.ThreadingHTTPServer(("0.0.0.0", PORT), Handler)
+    
     print(f"""
 ╔══════════════════════════════════════════╗
 ║     Ajay Doval — Command Center          ║
@@ -1822,7 +1822,3 @@ if __name__ == "__main__":
 ║     Press Ctrl+C to stop                 ║
 ╚══════════════════════════════════════════╝
 """)
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        print("\nDashboard stopped.")
