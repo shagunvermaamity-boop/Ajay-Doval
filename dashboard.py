@@ -47,23 +47,39 @@ if st.button("Process Video"):
 
 st.subheader("Pipeline")
 
-st.write("📥 Intake")
-st.write("📝 Transcript")
-st.write("🎬 Shorts")
+if st.button("📥 Intake"):
+    st.write("👉 Video metadata will appear here")
+
+if st.button("📝 Transcript"):
+    st.write("👉 Transcript will appear here")
+
+if st.button("🎬 Shorts"):
+    st.write("👉 Short clips will appear here")
 
 st.subheader("Content")
 
-st.write("💼 LinkedIn")
-st.write("📸 Instagram")
-st.write("🐦 Twitter")
+if st.button("💼 LinkedIn"):
+    st.write("👉 LinkedIn post will appear here")
+
+if st.button("📸 Instagram"):
+    st.write("👉 Instagram caption will appear here")
+
+if st.button("🐦 Twitter"):
+    st.write("👉 Twitter post will appear here")
+
+if st.button("📝 Blog"):
+    st.write("👉 Blog content will appear here")
 
 st.subheader("Quality")
 
-st.write("✅ QA Report")
+if st.button("✅ QA Report"):
+    st.write("👉 QA results will appear here")
 
 st.subheader("Intelligence")
 
-st.write("🔍 ORM Reports")
+if st.button("🔍 ORM Reports"):
+    st.write("👉 ORM insights will appear here")
+    
 st.title("Ajay Doval Dashboard 🚀")
 st.write("App is running successfully")
 
