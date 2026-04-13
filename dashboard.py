@@ -17,6 +17,9 @@ import uuid
 from pathlib import Path
 PORT = int(os.environ.get("PORT", 8080))
 
+st.title("Ajay Doval Dashboard 🚀")
+st.write("App is running successfully")
+
 OUTPUTS_DIR = Path("outputs")
 OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
