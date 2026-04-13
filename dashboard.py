@@ -15,7 +15,7 @@ import time
 import urllib.parse
 import uuid
 from pathlib import Path
-
+PORT = int(os.environ.get("PORT", 8080))
 
 OUTPUTS_DIR = Path("outputs")
 OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -1812,7 +1812,7 @@ Then output ===ACTIONS=== and write orm_action_items.md with immediate, short-te
 
 if __name__ == "__main__":
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
-    server = http.server.ThreadingHTTPServer(("localhost", PORT), Handler)
+    server = http.server.ThreadingHTTPServer(("0.0.0.0", PORT), Handler)
     print(f"""
 ╔══════════════════════════════════════════╗
 ║     Ajay Doval — Command Center          ║
