@@ -10,12 +10,45 @@ import json
 import os
 import re
 import subprocess
+import yt_dlp
 import threading
 import time
 import urllib.parse
 import uuid
 from pathlib import Path
 PORT = int(os.environ.get("PORT", 8080))
+def download_video(url):
+    ydl_opts = {
+        'outtmpl': 'video.%(ext)s',
+        'format': 'mp4'
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([url])
+
+    return "video.mp4"
+
+
+def create_shorts(video_path):
+    shorts = []
+    clips = [(0,10), (10,20), (20,30)]
+
+    for i, (start, end) in enumerate(clips):
+        output = f"short_{i}.mp4"
+
+        cmd = [
+            "ffmpeg",
+            "-i", video_path,
+            "-ss", str(start),
+            "-to", str(end),
+            "-c", "copy",
+            output
+        ]
+
+        subprocess.run(cmd)
+        shorts.append(output)
+
+    return shorts
 # UI STARTS HERE
 
 st.title("Ajay Doval Dashboard 🚀")
@@ -23,12 +56,12 @@ st.title("Ajay Doval Dashboard 🚀")
 url = st.text_input("Enter YouTube URL")
 
 if st.button("Process Video"):
-    st.write("🚀 Pipeline started")
-    transcript = "This is a sample transcript..."
-    instagram = "🔥 Caption..."
-    blog = "Blog content..."
-    linkedin = "LinkedIn post..."
-    shorts = ["Short clip 1", "Short clip 2", "Short clip 3"]
+    st.write("🚀 Processing started...")
+
+    video_path = download_video(url)
+    shorts = create_shorts(video_path)
+
+    st.success("✅ Shorts created!")
     steps = [
         "📥 Intake",
         "📝 Transcript",
