@@ -1,0 +1,3 @@
+anthropic
+google-generativeai
+openai-whisper
