@@ -24,7 +24,11 @@ url = st.text_input("Enter YouTube URL")
 
 if st.button("Process Video"):
     st.write("🚀 Pipeline started")
-
+    transcript = "This is a sample transcript..."
+    instagram = "🔥 Caption..."
+    blog = "Blog content..."
+    linkedin = "LinkedIn post..."
+    shorts = ["Short clip 1", "Short clip 2", "Short clip 3"]
     steps = [
         "📥 Intake",
         "📝 Transcript",
@@ -51,24 +55,24 @@ if st.button("📥 Intake"):
     st.write("👉 Video metadata will appear here")
 
 if st.button("📝 Transcript"):
-    st.write("👉 Transcript will appear here")
+    st.write(transcript)
 
 if st.button("🎬 Shorts"):
-    st.write("👉 Short clips will appear here")
+    st.write(f"🎬 {short}")
 
 st.subheader("Content")
 
 if st.button("💼 LinkedIn"):
-    st.write("👉 LinkedIn post will appear here")
+    st.write(LinkedIn)
 
 if st.button("📸 Instagram"):
-    st.write("👉 Instagram caption will appear here")
+    st.write(instagram)
 
 if st.button("🐦 Twitter"):
-    st.write("👉 Twitter post will appear here")
+    st.write(twitter)
 
 if st.button("📝 Blog"):
-    st.write("👉 Blog content will appear here")
+    st.write(blog)
 
 st.subheader("Quality")
 
