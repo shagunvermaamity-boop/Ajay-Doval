@@ -16,12 +16,14 @@ import urllib.parse
 import uuid
 from pathlib import Path
 
-OUTPUTS_DIR = Path("/Users/shagunverma/ajay-doval/outputs")
-YTDLP     = Path("/Users/shagunverma/bin/yt-dlp_macos")
-FFMPEG    = Path("/opt/homebrew/bin/ffmpeg")
-WHISPER   = Path("/opt/homebrew/bin/whisper")
-PYTHON3   = Path("/opt/homebrew/bin/python3")
-PORT      = 8080
+
+OUTPUTS_DIR = Path("outputs")
+OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
+
+YTDLP = "yt-dlp"
+FFMPEG = "ffmpeg"
+WHISPER = "whisper"
+PYTHON3 = "python3"
 
 VIDEO_MIME  = {"mp4": "video/mp4", "m4a": "audio/mp4", "webm": "video/webm", "mov": "video/quicktime"}
 ORM_API_KEY = "AIzaSyD-m6N82LA2kPJjfQDhsKEQ4Nfxg3ReF28"
