@@ -16,7 +16,34 @@ import urllib.parse
 import uuid
 from pathlib import Path
 PORT = int(os.environ.get("PORT", 8080))
+# UI STARTS HERE
 
+st.title("Ajay Doval Dashboard 🚀")
+
+url = st.text_input("Enter YouTube URL")
+
+if st.button("Process Video"):
+    st.write("Processing started...")
+
+st.subheader("Pipeline")
+
+st.write("📥 Intake")
+st.write("📝 Transcript")
+st.write("🎬 Shorts")
+
+st.subheader("Content")
+
+st.write("💼 LinkedIn")
+st.write("📸 Instagram")
+st.write("🐦 Twitter")
+
+st.subheader("Quality")
+
+st.write("✅ QA Report")
+
+st.subheader("Intelligence")
+
+st.write("🔍 ORM Reports")
 st.title("Ajay Doval Dashboard 🚀")
 st.write("App is running successfully")
 
