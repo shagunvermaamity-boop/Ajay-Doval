@@ -4,7 +4,7 @@ Ajay Doval Command Center — Local Dashboard
 Run: python3 /Users/shagunverma/ajay-doval/dashboard.py
 Open: http://localhost:8080
 """
-
+import streamlit as st 
 import http.server
 import json
 import os
@@ -1808,17 +1808,3 @@ Then output ===ACTIONS=== and write orm_action_items.md with immediate, short-te
 
         else:
             self.send_response(404); self.end_headers()
-
-
-if __name__ == "__main__":
-    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
-    
-    print(f"""
-╔══════════════════════════════════════════╗
-║     Ajay Doval — Command Center          ║
-║     Dashboard running at:                ║
-║     http://localhost:{PORT}                 ║
-║                                          ║
-║     Press Ctrl+C to stop                 ║
-╚══════════════════════════════════════════╝
-""")
